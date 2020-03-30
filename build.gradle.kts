@@ -13,6 +13,7 @@ java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
 	mavenCentral()
+	jcenter()
 }
 
 dependencies {
@@ -21,6 +22,11 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	//	Spring GraphQL
+	implementation("com.graphql-java:graphql-spring-boot-starter:5.0.2")
+	implementation("com.graphql-java:graphiql-spring-boot-starter:5.0.2")
+	implementation("com.graphql-java:graphql-java-tools:5.2.4")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
