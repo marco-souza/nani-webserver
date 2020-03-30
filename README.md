@@ -17,7 +17,7 @@ To run manually you need to have
 - mongodb instance running on your machine
 - java 8 or above installed
 
-After cloning the project, run `./gradlew bootRun` to test the development version or `./gradlew clean build` to generate a `.jar` file in `build/libs/my-app.jar` which can be executed with `./gradlew build/libs/my-app.jar`   
+After cloning the project, run `./gradlew bootRun` to test the development version or `./gradlew clean build` to generate a `.jar` file in `build/libs/my-app.jar` which can be executed with `java -jar ./build/libs/my-app.jar`   
 
 
 ## Usage
