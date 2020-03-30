@@ -1,11 +1,8 @@
-package com.nani.graphqlserver.entity
+package com.nani.graphqlserver.repository
 
-import org.springframework.data.annotation.Id
-import org.springframework.data.mongodb.core.mapping.Document
+import com.nani.graphqlserver.entity.Snack
+import org.springframework.data.mongodb.repository.MongoRepository
+import org.springframework.stereotype.Repository
 
-@Document(collection = "review")
-data class Review(
-	var snackID: String,
-	var rating: Number,
-	var text: String
-)
+@Repository
+interface SnackRepository : MongoRepository<Snack, String>
