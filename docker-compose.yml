@@ -1,0 +1,39 @@
+version: "3.7"
+
+services:
+  nani-webserver:
+    build:
+      context: .
+    environment:
+      MONGO_HOST: mongo
+      MONGO_USER: nani
+      MONGO_PASSWORD: example
+      MONGO_DATABASE: nani-staging
+    ports:
+      - 9000:9000
+    volumes:
+      - .:/app
+    networks:
+      - server
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: nani-staging
+      MONGO_USERNAME: nani
+      MONGO_PASSWORD: example
+    ports:
+      - 27017:27017
+    volumes:
+      - ./db-scripts/:/docker-entrypoint-initdb.d
+    networks:
+      - server
+
+volumes:
+  dbdata:
+
+networks:
+  server:
