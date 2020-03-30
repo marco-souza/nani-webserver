@@ -1,16 +1,13 @@
-type Query {
-    snacks: [Snack]
+extend type Query {
+    reviews(snackId: ID!): [Review]
 }
 
-type Snack {
-    id: ID!
-    name: String
-    amount: Float
-    reviews: [Review]
+type Review {
+    snackId: ID!
+    rating: Int
+    text: String
 }
 
-type Mutation {
-    newSnack(name: String!, amount: Float!) : Snack!
-    deleteSnack(id: ID!) : Boolean
-    updateSnack(id: ID!, amount: Float!) : Snack!
+extend type Mutation {
+    newReview(snackId: ID!, rating: Int, text:String!) : Review!
 }

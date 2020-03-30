@@ -1,3 +1,16 @@
-server.port=9000
-spring.data.mongodb.database=kotlin-graphql
-spring.data.mongodb.port=27017
+type Query {
+    snacks: [Snack]
+}
+
+type Snack {
+    id: ID!
+    name: String
+    amount: Float
+    reviews: [Review]
+}
+
+type Mutation {
+    newSnack(name: String!, amount: Float!) : Snack!
+    deleteSnack(id: ID!) : Boolean
+    updateSnack(id: ID!, amount: Float!) : Snack!
+}
