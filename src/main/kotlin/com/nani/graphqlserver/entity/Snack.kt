@@ -1,11 +1,16 @@
-package com.nani.graphqlserver
+package com.nani.graphqlserver.entity
 
-import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.boot.runApplication
+import org.springframework.data.annotation.Id
+import org.springframework.data.mongodb.core.mapping.Document
 
-@SpringBootApplication
-class GraphqlServerApplication
+@Document(collection = "snack")
+data class Snack(
+	var name: String,
+	var amount: Number
+) {
+	@Id
+	var id: String = ""
 
-fun main(args: Array<String>) {
-	runApplication<GraphqlServerApplication>(*args)
+	@Transient
+	var reviews: List<Review> = ArrayList()
 }
