@@ -26,7 +26,8 @@ dependencies {
 	implementation("com.graphql-java:graphql-spring-boot-starter:5.0.2")
 	implementation("com.graphql-java:graphiql-spring-boot-starter:5.0.2")
 	implementation("com.graphql-java:graphql-java-tools:5.2.4")
-
+	//  Auth0
+	implementation("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.1.3.RELEASE")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
